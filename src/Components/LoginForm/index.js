@@ -10,13 +10,13 @@ const LoginForm = () => {
   const [showSubmitError, setShowSubmitError] = useState(false)
   const history = useHistory()
 
-  const onLoginsuccess = jwt_Token => {
-    Cookies.set('jwt_token', jwt_Token, {expires: 30})
+  const onLoginsuccess = jwtToken => {
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
   }
 
-  const onFailure = errormsg => {
-    setErrormsg(errormsg)
+  const onFailure = errorMsg => {
+    setErrormsg(errorMsg)
     setShowSubmitError(true)
   }
 

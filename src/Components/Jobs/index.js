@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {BsSearch} from 'react-icons/bs'
@@ -36,7 +36,7 @@ const Jobs = () => {
   const [activeSalaryRangeId, setActiveSalaryRangeId] = useState('')
   const [activeEmploymentTypeIds, setActiveEmploymentTypeIds] = useState([])
 
-  const getJobs = async () => {
+  const getJobs = useCallback(async () => {
     setApiStatus(apiStatusConstants.loading)
     const employmentTypes = activeEmploymentTypeIds.join(',')
     const url = `https://apis.ccbp.in/jobs?employment_type=${employmentTypes}&minimum_package=${activeSalaryRangeId}&search=${searchInput}`
@@ -66,14 +66,14 @@ const Jobs = () => {
     } else {
       setApiStatus(apiStatusConstants.failure)
     }
-  }
+  }, [activeSalaryRangeId, activeEmploymentTypeIds, searchInput])
 
   useEffect(() => {
     getJobs()
-  }, [])
+  }, [getJobs])
 
-  const updateSalary = activeSalaryRangeId => {
-    setActiveSalaryRangeId(activeSalaryRangeId)
+  const updateSalary = salaryId => {
+    setActiveSalaryRangeId(salaryId)
     getJobs()
   }
 
@@ -82,7 +82,6 @@ const Jobs = () => {
       ? activeEmploymentTypeIds.filter(id => id !== typeId)
       : [...activeEmploymentTypeIds, typeId]
     setActiveEmploymentTypeIds(updatedTypes)
-    setTimeout(getJobs, 0)
   }
 
   const onChangeSearchInput = event => {
@@ -113,17 +112,6 @@ const Jobs = () => {
     </div>
   )
 
-  const renderJobsList = () =>
-    jobList.length > 0 ? (
-      <ul className="jobs-list-container">
-        {jobList.map(eachJob => (
-          <JobItem jobDetails={eachJob} key={eachJob.id} />
-        ))}
-      </ul>
-    ) : (
-      renderNoJobsView()
-    )
-
   const renderNoJobsView = () => (
     <div className="no-jobs-container">
       <img
@@ -137,6 +125,17 @@ const Jobs = () => {
       </p>
     </div>
   )
+
+  const renderJobsList = () =>
+    jobList.length > 0 ? (
+      <ul className="jobs-list-container">
+        {jobList.map(eachJob => (
+          <JobItem jobDetails={eachJob} key={eachJob.id} />
+        ))}
+      </ul>
+    ) : (
+      renderNoJobsView()
+    )
 
   const renderFailureView = () => (
     <div className="jobs-failure">

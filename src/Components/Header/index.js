@@ -38,7 +38,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <button onClick={onClickLogout} className="icon-button">
+            <button
+              onClick={onClickLogout}
+              className="icon-button"
+              type="button"
+            >
               <img
                 src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
                 className="nav-icon"
