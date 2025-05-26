@@ -1,5 +1,6 @@
 import {Link, useHistory} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
 import './index.css'
 
 const Header = () => {
@@ -30,11 +31,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/jobs">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
-                className="nav-icon"
-                alt="nav jobs"
-              />
+              <BsFillBriefcaseFill className="nav-icon" />
             </Link>
           </li>
           <li>

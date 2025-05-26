@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner'
 import {BsSearch} from 'react-icons/bs'
 import FilterSection from '../FilterSection'
 import Profile from '../Profile'
-import JobItem from '../JobItem'
+import JobCard from '../JobCard'
 import Header from '../Header'
 import './index.css'
 
@@ -130,7 +130,7 @@ const Jobs = () => {
     jobList.length > 0 ? (
       <ul className="jobs-list-container">
         {jobList.map(eachJob => (
-          <JobItem jobDetails={eachJob} key={eachJob.id} />
+          <JobCard jobDetails={eachJob} key={eachJob.id} />
         ))}
       </ul>
     ) : (

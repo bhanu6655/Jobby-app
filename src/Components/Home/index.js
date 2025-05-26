@@ -1,8 +1,13 @@
+import {useHistory} from 'react-router-dom'
 import Header from '../Header'
+
 import './index.css'
 
 const Home = () => {
-  const onFindJobs = () => {}
+  const history = useHistory()
+  const onFindJobs = () => {
+    history.push('/jobs')
+  }
   return (
     <div className="home-bg-container">
       <Header />
@@ -10,7 +15,6 @@ const Home = () => {
         <h1 className="home-heading">
           Find the Job that <br /> fits your Life
         </h1>
-
         <p className="home-page-description">
           Millions of People are searching for jobs Salary information,company
           reviews . Find the job that fits your abilites and Potential
@@ -22,7 +26,6 @@ const Home = () => {
           <br />
           abilites and Potential
         </p>
-
         <button type="button" className="btn-element" onClick={onFindJobs}>
           Find Jobs
         </button>
