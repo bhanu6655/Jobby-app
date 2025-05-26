@@ -1,0 +1,76 @@
+/* Filter Section Container */
+.side-bar {
+  width: 250px;
+
+  padding: 20px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section Headings */
+.employment-heading,
+.salary-heading {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #f1f1f1;
+}
+
+/* Employment & Salary List Styling */
+.employment-list,
+.salary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+/* List Item Styling */
+.employment-item,
+.salary-item {
+  margin-bottom: 12px;
+}
+
+/* Label Styles */
+.employment-label,
+.salary-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #d1d5db;
+  font-size: 15px;
+}
+
+/* Checkbox and Radio Button Inputs */
+.employment-label input[type='checkbox'],
+.salary-label input[type='radio'] {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  accent-color: #4f46e5; /* Indigo color for active input */
+}
+
+/* Text Next to Input */
+.employment-name,
+.salary-name {
+  font-weight: 400;
+}
+
+/* Horizontal Separator */
+.seperator {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background-color: #444c56;
+}
+
+/* Responsive Behavior */
+@media screen and (max-width: 768px) {
+  .side-bar {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .employment-heading,
+  .salary-heading {
+    font-size: 16px;
+  }
+}
