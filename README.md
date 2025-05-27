@@ -17,7 +17,7 @@
    ```text
    username: rahul
    password: rahul@2021
-    (primeuser)
+   
   ```
 
  [Repo](https://github.com/bhanu6655/Jobby-app) | [Demo](https://bhanujobby.ccbp.tech)
