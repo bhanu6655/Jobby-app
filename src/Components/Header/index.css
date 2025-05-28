@@ -1,9 +1,22 @@
 .nav-content {
   background-color: #2c364c;
   padding: 15px;
+  width: 100%;
+  position: fixed; /* or sticky if you want it to scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* ensure it stays above other content */
+  box-sizing: border-box; /* include padding in width calculation */
 }
 
+@media screen and (min-width: 768px) {
+  .nav-content {
+    margin: 0px;
+  }
+}
 /* Mobile View */
+
 .nav-bar-mobile-view {
   display: flex;
   justify-content: space-between;
@@ -88,7 +101,7 @@
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   font-size: 14px;
-  margin-right: 25px;
+  margin-right: 45px;
 }
 
 .logout-button:hover {
@@ -102,5 +115,4 @@
 .nav-icon {
   color: white;
   align-self: center;
-
 }

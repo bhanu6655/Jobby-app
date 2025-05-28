@@ -1,6 +1,7 @@
 import {Link, useHistory} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {BsFillBriefcaseFill} from 'react-icons/bs'
+
 import './index.css'
 
 const Header = () => {

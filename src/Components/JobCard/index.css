@@ -1,13 +1,29 @@
+.job-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* or center/start based on your layout */
+}
+
+@media screen and (max-width: 767px) {
+  .job-list-items {
+    width: 450px;
+    margin-right: 60px;
+    flex-shrink: 1;
+    margin: 15px;
+  }
+}
 .job-list-items {
   background-color: #202020;
   border-radius: 15px;
   padding: 25px;
   margin: 15px;
+
   width: 800px;
-  margin-right: 60px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
 }
+
 .company-container {
   display: flex;
   align-items: center;

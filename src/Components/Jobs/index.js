@@ -174,24 +174,26 @@ const Jobs = () => {
   }
 
   return (
-    <div className="jobs-page-container">
+    <div>
       <Header />
-      <div className="jobs-page">
-        <div className="side-bar">
-          <Profile />
-          <hr className="seperator" />
-          <FilterSection
-            salaryRangesList={salaryRangesList}
-            employmentTypesList={employmentTypesList}
-            activeSalaryRangeId={activeSalaryRangeId}
-            changeSalary={updateSalary}
-            activeEmploymentTypeIds={activeEmploymentTypeIds}
-            changeEmploymentType={updateEmploymentType}
-          />
-        </div>
-        <div className="jobs-content">
-          {renderSearchInput()}
-          {renderJobsBasedOnApiStatus()}
+      <div className="jobs-page-container">
+        <div className="jobs-page">
+          <div className="side-bar">
+            <Profile />
+            <hr className="seperator" />
+            <FilterSection
+              salaryRangesList={salaryRangesList}
+              employmentTypesList={employmentTypesList}
+              activeSalaryRangeId={activeSalaryRangeId}
+              changeSalary={updateSalary}
+              activeEmploymentTypeIds={activeEmploymentTypeIds}
+              changeEmploymentType={updateEmploymentType}
+            />
+          </div>
+          <div className="jobs-content">
+            {renderSearchInput()}
+            {renderJobsBasedOnApiStatus()}
+          </div>
         </div>
       </div>
     </div>
