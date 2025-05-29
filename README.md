@@ -20,5 +20,5 @@
    
   ```
 
- [Repo](https://github.com/bhanu6655/Jobby-app) | [Demo](https://bhanujobby.ccbp.tech)
+ [Repo](https://github.com/bhanu6655/Jobby-app) | [Demo]( https://bhanujobby.ccbp.tech)
 
